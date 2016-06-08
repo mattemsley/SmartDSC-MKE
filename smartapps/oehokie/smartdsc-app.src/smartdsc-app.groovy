@@ -325,18 +325,23 @@ def installed() {
         subscribe(dscthing, "updateDSC", updateDSC)   
     }
     if (location) {
-    	subscribe(location, "routineExecuted", modeChangeHandler)
-        // subscribe(location, "mode", modeChangeHandler)   
+    	//subscribe(location, "routineExecuted", modeChangeHandler)
+        subscribe(location, "mode", modeChangeHandler)   
     }
     if (locks) {
         subscribe(locks, "lock", lockHandler)   
     }
     if (smartmonitor == "Yes") {
-        subscribe(location, "alarmSystemStatus", alarmStatusUpdate)
+        //subscribe(location, "alarmSystemStatus", alarmStatusUpdate)
+	    subscribe(location, "alarmSystemStatus", alarmStatusHandler)
     }
 }
 
-def updated() {
+def alarmStatusHandler(evt) {
+    log.debug "alarm status changed to: ${evt.value}"
+}
+
+    def updated() {
     log.debug "Updated!"
     unsubscribe()
     installed()
