@@ -13,8 +13,8 @@ definition(
     author: "Matt Martz",
     description: "DSC Alarm Panel App",
     category: "Safety & Security",
-    iconUrl: "https://dl.dropboxusercontent.com/u/2760581/dscpanel_small.png",
-    iconX2Url: "https://dl.dropboxusercontent.com/u/2760581/dscpanel_large.png",
+    iconUrl: "http://www.mattemsley.com/images/dscpanel_small.png",
+    iconX2Url: "http://www.mattemsley.com/images/dscpanel_large.png",
     oauth: true
 )
 
